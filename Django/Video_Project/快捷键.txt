@@ -1,0 +1,13 @@
+control + D                复制一行，插入到下面
+alt + shift + ↑↓         移动一行
+shift + F6                 同时修改相关联的属性 名字
+control + F                查找 所选对象的所在位置
+control + P                提示参数
+
+tab                        往后缩进
+shift + tab                往前缩进
+
+模板语言：
+
+for>  + tab                自动补齐
+

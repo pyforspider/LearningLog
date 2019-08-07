@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GradeList</title>
+</head>
+<body>
+<h3>Grade List</h3>
+    {% for grade in grades %}
+{#        <li><a href="/app/getstudents/{{ grade.id }}">{{ grade.g_name }}</a></li>#}
+        <li><a href="{% url 'student' grade.id  %}">{{ grade.g_name }}</a></li>
+    {% endfor %}
+</body>
+</html>

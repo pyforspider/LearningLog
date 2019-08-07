@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentLIst</title>
+</head>
+<body>
+<h3>Student List</h3>
+    {% for student in students %}
+        <li>{{ student.s_name }}</li>
+    {% endfor %}
+<hr>
+    {% for student in students %}
+{#        <li>{{ forloop.counter }}:{{ student.get_student }}</li>#}
+            {% if forloop.first %}
+                <li style="color: red">{{ student.get_student }}</li>
+            {% else %}
+                <li style='color: blue'>{{ student.get_student }}</li>
+            {% endif %}
+        {% empty %}
+        <li>没有对应的学生</li>
+    {% endfor %}
+<h3>{{students.0.s_name}}</h3>
+<hr>
+<h3>{{ student_dict.hobby }}</h3>
+<h4>{{ count }}</h4>
+<h4>{% widthratio count 5 1 %}</h4>
+<h4>{% widthratio count 1 5 %}</h4>
+<hr>
+<ul>
+    {% for student in students %}
+        {% if forloop.counter|divisibleby:2 %}  {# '|' 管道或者过滤器，前者输出作为后者输入 #}
+        <li style="color: red">{{ student.s_name }}</li>
+        {% else %}
+            <li style="color: blue">{{ student.s_name }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<p>{{ code|safe }}</p>
+</body>
+</html>

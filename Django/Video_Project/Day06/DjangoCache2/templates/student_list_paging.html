@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentList</title>
+
+</head>
+<body>
+{% for student in page_object.object_list %}
+    <li>{{ student.s_name }}</li>
+{% endfor %}
+
+<br>
+
+{% for page_index in page_range %}
+    <li><a href="{% url 'get_student_page2' %}?page={{ page_index }}">{{ page_index }}</a></li>
+{% endfor %}
+
+</body>
+</html>

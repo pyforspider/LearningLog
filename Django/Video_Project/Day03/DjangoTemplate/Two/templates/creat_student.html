@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+</head>
+<body>
+
+<form action="{% url 'username' %}" method="post">
+    {% csrf_token %}
+    <span>Username: </span><input type="text" name="username" placeholder="Please input username">
+    <button name="submit">Submit Username</button>
+</form>
+
+</body>
+</html>

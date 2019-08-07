@@ -1,0 +1,21 @@
+1 注册App          'App',
+2. 2个template     os.path.join(BASE_DIR, 'templates'),
+3. 数据库
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DjangoModel2',
+        'USER': 'root',
+        'PASSWORD': 'shaojian',
+        'HOST': 'localhost',
+        'PORT': 3306,
+4. 2个urls         path('app/', include('App.urls')),
+                   urlpatterns = [
+	               path('hello/', views.hello, name='index'),
+                   ]
+5. 1个static       STATICFILES_DIRS = [
+			os.path.join(BASE_DIR, 'templates/static'),
+		   ]
+
+
+6. 建立新数据库  create database DjangoMission charset=utf8;
+
+drop database <数据库名>;

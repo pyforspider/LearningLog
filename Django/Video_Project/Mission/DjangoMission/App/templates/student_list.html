@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentList</title>
+</head>
+<body>
+<h3>Student List</h3>
+{% for student in students %}
+    <li><a href="{% url 'info' student.id %}">{{ student.s_name }}</a></li>
+{% endfor %}
+<h4><a href="{% url 'to_create_student' g_id %}">点击添加学生</a></h4>
+</body>
+</html>
+
+
+{#  这个页面  可以穿递 一个  g_id    #}

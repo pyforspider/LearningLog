@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Info</title>
+</head>
+<body>
+
+<h2 style="color: red">
+{% for s_info in s_infos %}
+    {{ s_info.i_name.s_name }}
+{% endfor %}
+</h2>
+
+<h3>Student Info Are Followings:</h3>
+
+<ul>
+{% for s_info in s_infos %}
+    <li> <h3>Hobby: {{ s_info.i_hobby }}</h3> </li>
+{% endfor %}
+
+{% for s_info in s_infos %}
+    <li> <h3>Age: {{ s_info.i_age }}</h3> </li>
+{% endfor %}
+
+{% for s_info in s_infos %}
+    <li> <h3>Birth: {{ s_info.i_birth }}</h3> </li>
+{% endfor %}
+</ul>
+
+<h3><a href="{% url 'delete' stu_id %}">删除</a></h3>
+
+</body>
+</html>

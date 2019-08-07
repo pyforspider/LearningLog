@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+</head>
+<body>
+<form action="{% url 'create_student' g_id %}" method="post">
+    {% csrf_token %}
+    <span>New student: </span><input type="text" name="newstudent" placeholder="Please input student name">
+    <button name="submit">Submit new student</button>
+</form>
+</body>
+</html>
+
+{#    也可以传递一个g_id   #}
