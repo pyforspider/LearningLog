@@ -1,0 +1,10 @@
+mysql -uroot -pshaojian
+
+create database SqlToModel charset=utf8;
+
+use SqlToModel;
+
+create table Book( id int auto_increment primary key, b_name varchar(16) );
+
+drop database Datebase_name;
+

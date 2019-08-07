@@ -173,4 +173,28 @@
     当我们提交的时候，会自动验证csrftoken
     验证通过，正常执行以下流程，验证不通过，403
     
-15. 
+15. 定制404 页面：
+
+    1. DEBUG设为False
+    2. 在BASE_DIR中的templates中加入404.html
+    3. 实现就近原则
+    
+16. 提交表单有个坑点：
+
+        <form action="{% url 'get_create_student' %}" method="post">
+        {% csrf_token %}
+        <span>New student: </span><input type="text" name="newstudent" placeholder="Please input student name">
+        <button name="submit">Submit new student</button>
+        </form>
+
+    这个 name="newstudent" 中间不能有'_'， 如‘new_student’是不行的
+    
+17. url反向解析：
+
+    分页器的实现，给url中加入 request.GET 可获取参数
+
+        {% for page_index in page_range %}
+        <li><a href="{% url 'get_student_page2' %}?page={{ page_index }}">{{ page_index }}</a></li>
+        {% endfor %}
+        
+18. 
