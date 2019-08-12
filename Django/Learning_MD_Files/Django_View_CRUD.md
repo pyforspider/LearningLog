@@ -78,6 +78,7 @@
         # s_grade_id 数据表自动生成
         students = Student.objects.all().filter(s_grade_id=g_id) 
         students = Grade.objects.get(pk=g_id).student_set.all()
+        students = Grade.objects.get(s_grade=grade, )              # grade为Grade对象, 同时还可以增加其他条件，如s_name=...
         
 7. 聚合函数 (Avg, Count, Max, Min ,Sum)
 
