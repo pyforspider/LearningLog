@@ -119,7 +119,7 @@
             def get_queryset(self): #重新父类实现all()的方法
                 return super(AnimalManager, self).get_queryset().filter(is_delete=True)        
     
-            此处使用model()方法创建了一个Manager实例对象:
+            此处使用model()方法创建了一个Animal实例对象:
             def create_animal(self):
                 a = self.model() 
                 a.a_name = a_name
