@@ -7,7 +7,7 @@ import time
 from urllib.parse import urlparse
 
 
-# 通过非阻塞io实现http请求
+# 通过非阻塞io实现http请求, 但是一直处于不停询问连接
 def get_url(url):
 	url = urlparse(url)
 	path = url.path
