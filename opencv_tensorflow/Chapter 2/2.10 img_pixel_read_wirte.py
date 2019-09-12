@@ -15,5 +15,5 @@ for i in range(100):
 
 cv2.imshow("drew_image", img)
 cv2.waitKey(2000)
-cv2.imwrite("drew_image.jpg", img)
+cv2.imwrite("drew_image.jpg", img, [cv2.IMWRITE_JPEG_QUALITY, 100])
 
