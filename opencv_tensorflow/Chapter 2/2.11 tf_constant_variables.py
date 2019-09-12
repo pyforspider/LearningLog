@@ -21,6 +21,7 @@ with tf.compat.v1.Session() as sess:
 init = tf.compat.v1.global_variables_initializer()
 
 with tf.compat.v1.Session() as sess:
+	# init 也是一个计算
 	sess.run(init)
 	print(sess.run(data3))
 
