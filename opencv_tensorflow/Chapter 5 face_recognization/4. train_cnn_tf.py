@@ -23,9 +23,9 @@ test_label = np.random.permutation(test_label)
 
 # train [0-9] [10*N] [15*N]  [0 0 1 0 0 0 0 0 0 0] -> 2
 # 准备训练数据,转换类型，对读入图片进行归一化处理，astype转换数据类型,/255是进行归一化，即像素0-1之间的转化
-# 转换完后，train_data数据集为三维，图片数量*64*64，其中64*64为每张图片矩阵的维度，1代表图片是黑白的
+# 转换完后，train_data数据集为三维，图片数量*64*64，其中64*64为每张图片矩阵的维度，1代表图片是黑白的 (165, 64, 64, 1)
 train_data = train_data.reshape(train_data.shape[0], 64, 64, 1).astype(np.float32) / 255  # .shape--> (165, 64, 64, 1)
-print(train_data)
+# 数据集共有15种人脸，所以建立165*15的数据标签
 train_labels_new = np.zeros((165, 15))  # 165 image 15
 for i in range(0, 165):
 	j = int(train_label[i, 0]) - 1  # 1-15 0-14
