@@ -1,12 +1,12 @@
-# 1 load xml 2 load jpg 3 haar gray 4 detect 5 draw
+# haar + adaboost 人脸识别
+# 1.load xml   2.load jpg   3.haar gray   4.detect   5.draw
 import cv2
-import numpy as np
 
 # load xml 1 file name
 face_xml = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_xml = cv2.CascadeClassifier('haarcascade_eye.xml')
 
-# load jpg
+# load jpg 地址
 img = cv2.imread('face.jpg')
 cv2.imshow('src', img)
 
@@ -36,4 +36,4 @@ for (x, y, w, h) in faces:
 		cv2.rectangle(roi_face_img, (e_x, e_y), (e_x + e_w, e_y + e_h), (0, 255, 0), 2)
 
 cv2.imshow('dst', img)
-cv2.waitKey(2000)
+cv2.waitKey(0)
